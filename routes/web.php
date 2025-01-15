@@ -1,9 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 Route::get('/', function () {
-    return view('welcome');
+return view('welcome');
 });
-
-route::resource('/products', \App\Http\Controllers\ProductController::class);
+Route::get('dashboard', [UserController::class, 'dashboard']);
+Route::get('users', [UserController::class, 'users']);
